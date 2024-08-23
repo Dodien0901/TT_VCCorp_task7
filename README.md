@@ -1,0 +1,4 @@
+Task 7: Thêm 1 trường có tên money vào trong bảng user (kiểu long 0 big int) đại diện cho số tiền của 1 user. Tìm hiểu Tool benchmark có tên Jmetter. Sau đó xây dựng kịch bản như sau: Viết 1 API cộng tiền cho user, 1 API cho phép chuyển 1 số tiền từ user A sang user B
+-	Sử dụng tool JMetter giả lập tạo ra 300 request ĐỒNG THỜI tới API cộng tiền đã nêu trên, mỗi request cộng cho người dùng có id chỉ định sẵn 1 số tiền là 100 đồng
+-	Sử dụng tool JMetter giả lập tạo ra 300 request ĐỒNG THỜI tới API chuyển tiền đã nêu trên, mỗi request chuyển 1 số tiền 300 đồng từ user A sang user B (với điều kiện ràng buộc chỉ được chuyển tiền khi số dư của user > 0)
+Đánh giá kết quả (độ chính xác) số tiền của các user sau khi thực hiện các kịch bản ở bước 3 và 4. Nếu phát hiện có sự sai lệnh, hãy tìm hiểu nguyên nhân và đưa ra cách khắc phục
