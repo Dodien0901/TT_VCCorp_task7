@@ -1,0 +1,121 @@
+/* styles.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+.action-buttons a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+}
+.edit-btn { background-color: #4CAF50; }
+.delete-btn { background-color: #f44336; }
+.manage-btn { background-color: #008CBA; }
+.add-user-btn {
+    display: block;
+    width: 100px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.money-column {
+    text-align: right;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+input[type="text"], input[type="number"], select {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+button, .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+.btn-secondary {
+    background-color: #f44336;
+    color: white;
+    margin-left: 10px;
+}
+button:hover, .btn:hover {
+    opacity: 0.8;
+}
+
+/* Spacing */
+.spacing {
+    height: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Alert styles */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+/* Money management styles */
+.balance {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.form-section {
+    margin-bottom: 30px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}

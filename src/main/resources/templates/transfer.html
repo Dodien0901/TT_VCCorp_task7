@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Transfer Money</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+  <h1>Transfer Money from User: <span th:text="${user.name}"></span></h1>
+  <p class="balance">Current Balance: <span th:text="${#numbers.formatDecimal(user.money, 1, 'COMMA', 2, 'POINT')}"></span></p>
+
+  <div th:if="${message}" class="alert alert-success" th:text="${message}"></div>
+  <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+  <div class="form-section">
+    <h2>Transfer Money</h2>
+    <form th:action="@{/users/transfer}" method="post">
+      <input type="hidden" name="fromUserId" th:value="${user.id}">
+      <div class="form-group">
+        <label for="toUserId">To User ID:</label>
+        <input type="number" id="toUserId" name="toUserId" required>
+      </div>
+      <div class="form-group">
+        <label for="transferAmount">Amount:</label>
+        <input type="number" id="transferAmount" name="amount" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Transfer Money</button>
+    </form>
+  </div>
+
+  <a th:href="@{/users/{id}/money(id=${user.id})}" class="btn btn-secondary">Back to Money Management</a>
+  <a href="/users" class="btn btn-secondary">Back to User List</a>
+</div>
+</body>
+</html>

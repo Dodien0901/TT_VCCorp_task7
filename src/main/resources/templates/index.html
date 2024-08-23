@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Management</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1>User List</h1>
+
+    <form th:action="@{/users/search}" method="get">
+        <input type="text" name="keyword" placeholder="Enter search keyword">
+        <select name="searchBy">
+            <option value="name">Name</option>
+            <option value="address">Address</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Search</button>
+        <a href="/users" class="btn btn-secondary">Reset</a>
+    </form>
+
+    <div class="spacing"></div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Age</th>
+            <th>Money</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.address}"></td>
+            <td th:text="${user.age}"></td>
+            <td class="money-column" th:text="${user.money}"></td>
+            <td class="action-buttons">
+                <a class="edit-btn" th:href="@{/users/edit/{id}(id=${user.id})}">Edit</a>
+                <a class="delete-btn" th:href="@{/users/delete/{id}(id=${user.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+                <a class="manage-btn" th:href="@{/users/{id}/money(id=${user.id})}">Manage Money</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a class="add-user-btn" href="/users/add">Add User</a>
+</div>
+</body>
+</html>
